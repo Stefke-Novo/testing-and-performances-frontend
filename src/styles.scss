@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+    width:fit-content;
+    height:fit-content;
+}
+html{
+    display: flex;
+    height: 100%;
+    width:100%;
+    flex-grow: 1;
+}
+body{
+    height:100%;
+    width:100%;
+}
+app-root,app-main-page{
+    display: flex;
+    height:100%;
+    width: 100%;
+    flex-direction: column;
+}
