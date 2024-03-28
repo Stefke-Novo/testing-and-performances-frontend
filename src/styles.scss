@@ -9,14 +9,15 @@
 html{
     display: flex;
     height: 100%;
-    width:100%;
+    min-width: 100%;
     flex-grow: 1;
 }
 body{
     height:100%;
     width:100%;
+    min-width: fit-content;
 }
-app-root,app-main-page{
+app-root,app-main-page,app-insert-osoba-page{
     display: flex;
     height:100%;
     width: 100%;

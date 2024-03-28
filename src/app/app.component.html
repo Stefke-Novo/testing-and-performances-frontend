@@ -1,1 +1,17 @@
+<header>
+    <h1>Website title</h1>
+    <menu>
+        <ul>
+            <li><a><p routerLink="/">Почетна страна</p></a></li>
+            <li><a><p>Option 2</p></a></li>
+            <li><a><p>Option 3</p></a></li>
+            <li><a><p>Option 4</p></a></li>
+            <li><a><p>Option 5</p></a></li>
+        </ul>
+    </menu>
+    <div>
+        <h2>{{dateTime | async | date:'hh:mm:ss'}}</h2>
+        <h3>{{dateTime | async | date:'dd.MM.YYYY'}}</h3>
+    </div>
+</header>
 <router-outlet></router-outlet>

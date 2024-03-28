@@ -1,0 +1,24 @@
+<form [formGroup]="osobaForm" (ngSubmit)="getData()">
+    <input type="text" placeholder="Име" formControlName="ime">
+        <input type="text" placeholder="Презиме" formControlName="prezime">
+        <div>
+            <label for="datumRodjenja">Датум рођења</label>
+            <input type="date" placeholder="Датум рођења" id="datumRodjenja" formControlName="datumRodjenja">
+        </div>
+        <input type="number" placeholder="ЈМБГ" formControlName="jmbg">
+        <input type="text" placeholder="Број телефона" formControlName="brojTelefona">
+        <div>
+            <label for="rodnoMestoList">Родно место</label>
+            <select id="rodnoMestoList" formControlName="rodnoMesto">
+                <option *ngFor="let mesto of mestoList" value={{mesto.m}}>{{mesto.naziv}}</option>
+            </select>
+        </div>
+        <div>
+            <label for="prebivalisteList">Пребивалиште</label>
+            <select id="prebivalisteList" formControlName="prebivaliste">
+                <option value="0" selected>Одаберите опцију</option>
+                <option *ngFor="let mesto of mestoList" value={{mesto.m}}>{{mesto.naziv}}</option>
+            </select>
+        </div>
+        <button>Креирај особу</button>
+</form>

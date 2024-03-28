@@ -1,19 +1,4 @@
-<header>
-    <h1>Website title</h1>
-    <menu>
-        <ul>
-            <li><a><p>Option 1</p></a></li>
-            <li><a><p>Option 2</p></a></li>
-            <li><a><p>Option 3</p></a></li>
-            <li><a><p>Option 4</p></a></li>
-            <li><a><p>Option 5</p></a></li>
-        </ul>
-    </menu>
-    <div>
-        <h2>{{dateTime | async | date:'hh:mm:ss'}}</h2>
-        <h3>{{dateTime | async | date:'dd.MM.YYYY'}}</h3>
-    </div>
-</header>
+
 <div class="table-template">
     <table>
         <thead>
@@ -36,14 +21,22 @@
                     <td><p>{{item.starost}}</p></td>
                     <td><p>{{item.jmbg}}</p></td>
                     <td><p>{{item.brojTelefona}}</p></td>
+                    <td><p>{{item.prebivaliste.naziv}}</p></td>
                     <td><p>{{item.rodnoMesto.naziv}}</p></td>
-                    <td><button><img src="https://icons.veryicon.com/png/o/miscellaneous/food-time/rewrite.png" alt="update person"></button></td>
-                    <td><button><img src="https://www.svgrepo.com/show/32086/trash.svg" alt="delete person"></button></td>
+                    <td><button routerLink="/update" (click)="setOsobaObject(item)"><img src="https://icons.veryicon.com/png/o/miscellaneous/food-time/rewrite.png" alt="update person"></button></td>
+                    <td><button (click)="deleteOsoba(item)"><img src="https://www.svgrepo.com/show/32086/trash.svg" alt="delete person"></button></td>
                 </tr>
            </ng-container>
         </tbody>
     </table>
     <div>
-        <button><p>Креирај нову особу</p></button>
+        <button routerLink="/insert"><p>Креирај нову особу</p></button>
+        <button (click)="decreaseIndex()"><p>Претходна страница</p></button>
+        <input type="number" [(ngModel)]="index">
+        <button (click)="increaseIndex()"><p>Следећа страница</p></button>
+        <div>
+            <p>Бр. редова</p>
+            <input type="number" (keyup)="changeSize($event)" [(ngModel)]="size">
+        </div>
     </div>
 </div>

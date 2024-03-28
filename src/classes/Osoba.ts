@@ -37,6 +37,9 @@ export default class Osoba{
     get prezime():string{
         return this._prezime;
     }
+    set prezime(value:string){
+        this._prezime=value;
+    }
     get datumRodjenja():Date{
         return this._datumRodjenja;
     }
@@ -58,13 +61,13 @@ export default class Osoba{
     get brojTelefona(){
         return this._brojTelefona;
     }
-    set beojTelefona(value:string){
+    set brojTelefona(value:string){
         this._brojTelefona=value;
     }
     get rodnoMesto():Mesto{
         return this._rodnoMesto;
     }
-    set rosdnoMesto(value:Mesto){
+    set rodnoMesto(value:Mesto){
         this._rodnoMesto=value;
     }
     get prebivaliste():Mesto{
@@ -74,7 +77,40 @@ export default class Osoba{
         this._prebivaliste=value;
     }
 
+    public setIme(value:string):Osoba{
+        this._ime=value;
+        return this;
+    }
+    public setPrezime(value:string):Osoba{
+        this._prezime=value;
+        return this;
+    }
+    public setDatumRodjenja(value:Date):Osoba{
+        this._datumRodjenja=value;
+        return this;
+    }
+    public setJmbg(value:string):Osoba{
+        this._jmbg=value;
+        return this;
+    }
+    public setBrojTelefona(value:string){
+        this._brojTelefona=value;
+        return this;
+    }
+    public setRodnoMesto(value:Mesto){
+        this._rodnoMesto=value;
+        return this;
+    }
+    public setPrebivaliste(value:Mesto){
+        this._prebivaliste=value;
+        return this;
+    }
+
+    public toJson(){
+        return {o:this._o,ime:this._ime,prezime:this._prezime,datumRodjenja:this._datumRodjenja.toISOString(),starost:this._starost,jmbg:this._jmbg,brojTelefona:this._brojTelefona,rodno_mesto_id:this._rodnoMesto.m,rodnoMesto:this._rodnoMesto,prebivaliste:this._prebivaliste}
+    }
+
     public static getAttributes():string[]{
-        return ["ИД","Име","Презиме","Датум рођења","Старост","ЈМБГ","Број телефона","Родно место"]
+        return ["ИД","Име","Презиме","Датум рођења","Старост","ЈМБГ","Број телефона","Пребивалиште","Родно место"]
     }
 }
