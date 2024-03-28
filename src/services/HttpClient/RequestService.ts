@@ -14,5 +14,8 @@ export default class RequestService<T> implements IRequestService<T>{
     post(path: string, value: object): Observable<T> {
         return this.httpClient.post<T>(path,value);
     }
+    put(path:string,value:object):Observable<T>{
+        return this.httpClient.put<T>(path,value);
+    }
 
 }
