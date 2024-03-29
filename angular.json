@@ -86,6 +86,7 @@
               "zone.js",
               "zone.js/testing"
             ],
+            "codeCoverageExclude": ["src/classes/**/*"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -95,7 +96,9 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [],
+            "codeCoverage": true,
+            "karmaConfig": "karma.conf.js"
           }
         }
       }

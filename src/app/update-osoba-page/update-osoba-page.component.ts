@@ -21,7 +21,10 @@ export class UpdateOsobaPageComponent implements OnInit,OnDestroy {
   public mestoList!:Mesto[];
   public names:Mesto[]=[];
   public list:Mesto[]=[];
-  constructor(private manageObjectService:ManageObjectService, private getMestoService:GetMestoService, private updateOsobaService:UpdateOsobaService){
+  constructor(
+    private manageObjectService:ManageObjectService, 
+    private getMestoService:GetMestoService, 
+    private updateOsobaService:UpdateOsobaService){
     this.selectedOsoba=new Osoba(0,"","",new Date(),0,"","",0);
     this.subscription= new Subscription();
     this.resultOsoba= new Osoba(0,"","",new Date(),0,"","",0);
@@ -68,7 +71,7 @@ export class UpdateOsobaPageComponent implements OnInit,OnDestroy {
   }
 
 
-  public getData(){
+  public getData():void{
     this.resultOsoba.o=this.selectedOsoba.o;
     this.subscription.add(
       this.updateOsobaService.updateOsoba(this.resultOsoba).subscribe({
